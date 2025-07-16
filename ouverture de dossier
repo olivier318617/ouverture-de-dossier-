@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouverture de Dossier - Cabinet Maître SCHMID</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        @media print {
+            body {
+                background-color: white;
+            }
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+
+        /* En-tête */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #1a1a1a;
+        }
+
+        .cabinet-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .cabinet-info {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Titre */
+        .document-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 30px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Numéro de dossier */
+        .dossier-number {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .dossier-number-box {
+            display: inline-block;
+            border: 2px solid #1a1a1a;
+            padding: 10px 20px;
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #333;
+            text-transform: uppercase;
+        }
+
+        /* Champs */
+        .field-group {
+            margin-bottom: 15px;
+        }
+
+        .field-row {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: baseline;
+        }
+
+        .field-label {
+            font-weight: bold;
+            margin-right: 10px;
+            min-width: 150px;
+            flex-shrink: 0;
+        }
+
+        .field-value {
+            flex-grow: 1;
+            border-bottom: 1px dotted #999;
+            min-height: 20px;
+            padding-bottom: 2px;
+        }
+
+        /* Grille pour les coordonnées */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Cases à cocher */
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #333;
+            margin-right: 8px;
+            display: inline-block;
+        }
+
+        /* Zone de texte */
+        .text-area {
+            border: 1px solid #999;
+            min-height: 80px;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #fafafa;
+        }
+
+        /* Tableau des honoraires */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #999;
+            font-size: 11px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- En-tête -->
+        <div class="header">
+            <div class="cabinet-name">CABINET DE MAÎTRE SCHMID</div>
+            <div class="cabinet-info">
+                Avocat au Barreau de _________________<br>
+                Adresse : _________________________________________________<br>
+                Tél : _________________ | Email : _________________________<br>
+                SIRET : _________________ | Toque : _______
+            </div>
+        </div>
+
+        <!-- Titre du document -->
+        <div class="document-title">OUVERTURE DE DOSSIER</div>
+
+        <!-- Numéro de dossier -->
+        <div class="dossier-number">
+            <div class="dossier-number-box">
+                DOSSIER N° : _______________
+            </div>
+        </div>
+
+        <!-- Informations du client -->
+        <div class="section">
+            <div class="section-title">Informations Client</div>
+            <div class="two-column">
+                <div>
+                    <div class="field-row">
+                        <span class="field-label">Civilité :</span>
+                        <span class="field-value"></span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Nom :</span>
+                        <span class="field-value"></span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Prénom :</span>
+                        <span class="field-value"></span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Date de naissance :</span>
+                        <span class="field-value"></span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Profession :</span>
+                        <span class="field-value"></span>
+                    </div>
+                </div>
+                <div>
+                    <div class="field-row">
+                        <span class="field-label">Téléphone :</span>
+                        <span class="field-value"></span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Mobile :</span>
+                        <span class="field-value"></span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Email :</span>
+                        <span class="field-value"></span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Adresse :</span>
+                        <span class="field-value"></span>
+                    </div>
+                    <div class="field-row">
+                        <span class="field-label">Code postal / Ville :</span>
+                        <span class="field-value"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nature de l'affaire -->
+        <div class="section">
+            <div class="section-title">Nature de l'Affaire</div>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <span class="checkbox"></span> Droit de la famille
+                </div>
+                <div class="checkbox-item">
+                    <span class="checkbox"></span> Droit pénal
+                </div>
+                <div class="checkbox-item">
+                    <span class="checkbox"></span> Droit du travail
+                </div>
+                <div class="checkbox-item">
+                    <span class="checkbox"></span> Droit immobilier
+                </div>
+                <div class="checkbox-item">
+                    <span class="checkbox"></span> Droit commercial
+                </div>
+                <div class="checkbox-item">
+                    <span class="checkbox"></span> Autre : _______________
+                </div>
+            </div>
+            <div class="field-row" style="margin-top: 15px;">
+                <span class="field-label">Objet précis :</span>
+                <span class="field-value"></span>
+            </div>
+        </div>
+
+        <!-- Partie adverse -->
+        <div class="section">
+            <div class="section-title">Partie Adverse (le cas échéant)</div>
+            <div class="field-row">
+                <span class="field-label">Nom / Raison sociale :</span>
+                <span class="field-value"></span>
+            </div>
+            <div class="field-row">
+                <span class="field-label">Avocat adverse :</span>
+                <span class="field-value"></span>
+            </div>
+        </div>
+
+        <!-- Honoraires -->
+        <div class="section">
+            <div class="section-title">Honoraires</div>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Montant HT</th>
+                    <th>TVA (20%)</th>
+                    <th>Montant TTC</th>
+                </tr>
+                <tr>
+                    <td>Honoraires forfaitaires</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Taux horaire</td>
+                    <td></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Provision initiale</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Documents reçus -->
+        <div class="section">
+            <div class="section-title">Documents Reçus</div>
+            <div class="text-area"></div>
+        </div>
+
+        <!-- Dates importantes -->
+        <div class="section">
+            <div class="section-title">Dates Importantes</div>
+            <div class="field-row">
+                <span class="field-label">Date d'ouverture :</span>
+                <span class="field-value"></span>
+            </div>
+            <div class="field-row">
+                <span class="field-label">Première consultation :</span>
+                <span class="field-value"></span>
+            </div>
+            <div class="field-row">
+                <span class="field-label">Échéances :</span>
+                <span class="field-value"></span>
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="section">
+            <div class="section-title">Notes / Observations</div>
+            <div class="text-area" style="min-height: 100px;"></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div style="display: flex; justify-content: space-between;">
+                <span>Dossier ouvert par : _________________</span>
+                <span>Date : ____/____/________</span>
+                <span>Signature : _________________</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
